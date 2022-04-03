@@ -7,6 +7,8 @@
 		<title>z1-Frontend UI - Juanlu Castro</title>
 		<link rel="stylesheet" href="/css/main.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" defer></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js" defer></script>
 		<script src="/script/script.js" defer></script>
 	</head>
 
@@ -17,9 +19,9 @@
 			<a href="#"><div class="logo"></div></a>
 			<nav>
 				<ul class="menu">
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Press</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#about-us">About us</a></li>
+					<li><a href="#press">Press</a></li>
+					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -27,7 +29,6 @@
 		<!-- Hero -->
 
 		<section class="hero">
-			<!-- <img src="./assets/images/header.jpg" alt=""> -->
 			<div class="hero__text-content">
 				<h1>Lorem ipsum dolor sit amet.</h1>
 				<p>
@@ -74,7 +75,7 @@
 
 		<!-- About us -->
 
-		<section class="about-us">
+		<section class="about-us" id="about-us">
 			<div class="about-us__background">
 				<div class="about-us__text-content">
 					<div class="mini-title">about us</div>
@@ -90,7 +91,7 @@
 
 		<!-- Press -->
 
-		<section class="press">
+		<section class="press" id="press">
 			<div class="press__header">
 				<h2 class="title">Press</h2>
 				<button class="button-link"><a href="#">See all<span class="material-icons">arrow_right_alt</span></a></button>
@@ -127,7 +128,11 @@
 					<p class="card__date">Feb 28, 2020</p>
 				</div>
 				
-					<button class="button-link"><a href="#">Read more</a></button>
+					<button class="button-link">
+						<a href="#">
+							Read more
+						</a>
+					</button>
 				
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
 /* Margin and paddings */
 * {
   margin: 0;
@@ -112,8 +112,9 @@ body {
 /* General */
 button {
   font-size: 16px;
-  background-color: #BD1C43;
+  background: #BD1C43;
   color: #FEFFFF;
+  height: 3rem;
   padding: 0.75rem 1.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,15 +134,30 @@ button a {
           align-items: center;
 }
 
+button:hover {
+  cursor: pointer;
+  background-color: #7C2D44;
+}
+
 button span {
   margin-left: 0.75rem;
 }
 
 .button-link {
-  background-color: transparent;
+  background: transparent;
   color: #BD1C43;
   padding-left: 0;
   padding-right: 0;
+}
+
+.button-link a {
+  font-weight: 500;
+}
+
+.button-link:hover {
+  color: #1F191A;
+  font-weight: 700;
+  background: transparent;
 }
 
 section {
@@ -170,6 +186,11 @@ section {
   border-radius: 40px;
 }
 
+.logo:hover {
+  cursor: pointer;
+  background-color: #6D6D6D;
+}
+
 /* Header */
 header {
   display: -webkit-box;
@@ -196,6 +217,11 @@ header {
   color: #1F191A;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.menu a:hover {
+  font-weight: 700;
+  color: #BD1C43;
 }
 
 /* Hero section */
@@ -316,7 +342,7 @@ header {
   overflow: hidden;
   background-image: url("../assets/svg/vector-element-1.svg"), url("../assets/svg/vector-element-2.svg");
   background-size: 8.75rem, 16.75rem;
-  background-position: 22.25rem 0, 32.4375rem 37.375rem;
+  background-position: 22.25rem -3rem, 32.4375rem 38.375rem;
   background-repeat: no-repeat, no-repeat;
   background-color: #FAF4EF;
   display: -webkit-box;
@@ -422,10 +448,11 @@ footer {
   color: #F2F2F2;
   font-size: 0.875rem;
   font-weight: 400;
+  position: relative;
+  z-index: 10;
 }
 
 .footer__sections {
-  border: colid 1px red;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto auto;
@@ -439,6 +466,15 @@ footer {
 
 .footer__list-item {
   margin: 1rem 0;
+}
+
+.footer__list-item a {
+  font-size: 0.875rem;
+}
+
+.footer__list-item a:hover {
+  background-color: transparent;
+  font-weight: 700;
 }
 
 .footer__legal {
@@ -472,7 +508,17 @@ footer {
           justify-content: flex-end;
 }
 
-.footer__conditions span, .footer__conditions a {
-  margin-left: .3125rem;
+.footer__conditions span {
+  margin-left: 0.3125rem;
   font-size: 0.8125rem;
+}
+
+.footer__conditions a {
+  font-size: 0.8125rem;
+}
+
+.footer__conditions a:hover {
+  color: #6D6D6D;
+  background-color: transparent;
+  font-weight: 500;
 }

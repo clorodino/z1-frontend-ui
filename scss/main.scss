@@ -3,16 +3,23 @@
 /* General */
 
 button {
-	font-size: 16px;
-	background-color: $primary;
+    font-size: 16px;
+	background: $primary;
 	color: $white;
+    height: 3rem;
 	padding: 0.75rem 1.6rem;
 	display: flex;
 	align-items: center;
     border-radius: 0.25rem;
+
     a {
         display: flex;
 	    align-items: center;
+    }
+
+    &:hover {
+        cursor: pointer;
+      	background-color: $terciary;
     }
 }
 
@@ -21,10 +28,20 @@ button span {
 }
 
 .button-link {
-	background-color: transparent;
+	background: transparent;
 	color: $primary;
 	padding-left: 0;
     padding-right: 0;
+
+    a{
+        font-weight: 500;
+    }
+
+    &:hover {
+        color: $black;
+        font-weight: 700;
+        background: transparent;
+    }
 }
 
 section {
@@ -51,6 +68,11 @@ section {
     width: 10rem;
     height: 2.5rem;
     border-radius: 40px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $dark-grey;
+    }
 }
 
 
@@ -71,6 +93,13 @@ header {
 	color: $black;
 	font-size: 1rem;
 	font-weight: 500;
+
+    a {
+        &:hover {
+            font-weight:700;
+            color: $primary;
+        }
+    }
 }
 
 /* Hero section */
@@ -177,7 +206,7 @@ header {
         url('../assets/svg/vector-element-1.svg'),
         url('../assets/svg/vector-element-2.svg');
     background-size: 8.75rem, 16.75rem;
-    background-position: 22.25rem 0, 32.4375rem 37.375rem;
+    background-position: 22.25rem -3rem, 32.4375rem 38.375rem;
     background-repeat: no-repeat, no-repeat;
 	background-color: $secondary;
 	display: flex;
@@ -256,10 +285,11 @@ footer {
     color: $grey;
     font-size: 0.875rem;
     font-weight: 400;
+    position: relative;
+    z-index: 10;
 }
 
 .footer__sections {
-    border: colid 1px red;
     display: grid;
     grid-template-columns: auto auto auto auto;
 	grid-gap: 2rem;
@@ -267,11 +297,20 @@ footer {
 }
 
 .footer__list-title {
-    color: $dark-grey
+    color: $dark-grey;
 }
 
 .footer__list-item {
     margin: 1rem 0;
+    a {
+        font-size: 0.875rem;
+        
+        &:hover {
+            //color: $dark-grey;
+            background-color: transparent;
+            font-weight: 700;
+        }
+    }
 }
 
 .footer__legal {
@@ -283,6 +322,7 @@ footer {
     p, span {
         font-size: 0.875rem;
     }
+
 }
 
 .footer__copyright {
@@ -297,8 +337,17 @@ footer {
     display: flex;
     justify-content: flex-end;
     
-    span, a{
-        margin-left: .3125rem;
+    span {
+        margin-left: 0.3125rem;
         font-size: 0.8125rem;
+    }
+    a {
+        font-size: 0.8125rem;
+
+        &:hover {
+            color: $dark-grey;
+            background-color: transparent;
+            font-weight: 500;
+        }
     }
 }
