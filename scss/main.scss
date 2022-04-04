@@ -1,51 +1,63 @@
-@import 'auxiliar', 'colors', 'fonts', 'mixins', 'reset', 'responsive', 'utilities';
+@import 'colors', 'fonts', 'reset', 'responsive';
 
 /* General */
 
+body {
+	overflow-x: hidden;
+}
+
 button {
-    font-size: 16px;
+	font-size: 1rem;
 	background: $primary;
 	color: $white;
-    height: 3rem;
+	height: 3rem;
 	padding: 0.75rem 1.6rem;
 	display: flex;
 	align-items: center;
-    border-radius: 0.25rem;
+	border-radius: 0.25rem;
 
-    a {
-        display: flex;
-	    align-items: center;
-    }
+	a {
+		display: flex;
+		align-items: center;
+	}
 
-    &:hover {
-        cursor: pointer;
-      	background-color: $terciary;
-    }
+	&:hover {
+		cursor: pointer;
+		background-color: $terciary;
+	}
 }
 
 button span {
-    margin-left: 0.75rem;
+	margin-left: 0.75rem;
 }
 
 .button-link {
 	background: transparent;
 	color: $primary;
 	padding-left: 0;
-    padding-right: 0;
+	padding-right: 0;
 
-    a{
-        font-weight: 500;
-    }
+	a {
+		font-weight: 500;
+	}
 
-    &:hover {
-        color: $black;
-        font-weight: 700;
-        background: transparent;
-    }
+	&:hover {
+		color: $black;
+		font-weight: 700;
+		background: transparent;
+	}
 }
 
 section {
 	margin-top: 7rem;
+
+	@include tablet {
+		margin-top: 3rem;
+	}
+
+	@include mobile {
+		margin-top: 3rem;
+	}
 }
 
 .mini-title {
@@ -61,20 +73,23 @@ section {
 	font-weight: 500;
 	color: $black;
 	margin-bottom: 1.5rem;
+
+	@include mobile {
+		font-size: 2.2rem;
+	}
 }
 
 .logo {
-    background-color: $grey;
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 40px;
+	background-color: $grey;
+	width: 10rem;
+	height: 2.5rem;
+	border-radius: 2.5rem;
 
-    &:hover {
-        cursor: pointer;
-        background-color: $dark-grey;
-    }
+	&:hover {
+		cursor: pointer;
+		background-color: $dark-grey;
+	}
 }
-
 
 /* Header */
 
@@ -83,6 +98,16 @@ header {
 	justify-content: space-between;
 	padding: 1.2rem 6rem;
 	align-items: center;
+
+	@include tablet {
+		padding: 1rem 2rem;
+	}
+
+	@include mobile {
+		flex-wrap: wrap;
+		padding: 1rem;
+		justify-content: center;
+	}
 }
 
 .menu {
@@ -94,12 +119,20 @@ header {
 	font-size: 1rem;
 	font-weight: 500;
 
-    a {
-        &:hover {
-            font-weight:700;
-            color: $primary;
-        }
-    }
+	@include tablet {
+		margin-left: 1rem;
+	}
+
+	@include mobile {
+		padding-top: 1rem;
+	}
+
+	a {
+		&:hover {
+			font-weight: 700;
+			color: $primary;
+		}
+	}
 }
 
 /* Hero section */
@@ -107,17 +140,36 @@ header {
 .hero {
 	margin: 0 3.28rem;
 	position: relative;
-	height: 680px;
+	height: 42.5rem;
 	overflow: hidden;
 	background: url(../assets/images/header.jpg) no-repeat center;
 	background-size: cover;
 	display: flex;
 	align-items: center;
+
+	@include tablet {
+		margin: 1rem;
+		height: auto;
+	}
+
+	@include mobile {
+		margin: 0;
+		padding: 1rem;
+	}
 }
 
 .hero__text-content {
 	max-width: 46rem;
 	padding: 0 6rem;
+
+	@include tablet {
+		padding: 5rem 2rem;
+		max-width: 30rem;
+	}
+
+	@include mobile {
+		padding: 0 1rem;
+	}
 
 	h1 {
 		font-size: 4.25rem;
@@ -125,6 +177,11 @@ header {
 		color: $white;
 		padding-bottom: 1.8rem;
 		line-height: 5.1rem;
+
+		@include mobile {
+			font-size: 2.6rem;
+			line-height: 2.8rem;
+		}
 	}
 
 	p {
@@ -135,7 +192,6 @@ header {
 		padding-bottom: 1.8rem;
 		line-height: 2.0625rem;
 	}
-
 }
 
 /* Platform section */
@@ -154,6 +210,20 @@ header {
 	align-items: center;
 	text-align: center;
 	margin: 0 0 4rem;
+
+	@include tablet {
+		width: auto;
+		padding: 0 2rem;
+		height: auto;
+		margin: 0 0 2rem;
+	}
+
+	@include mobile {
+		width: auto;
+		padding: 0 2rem;
+		height: auto;
+		margin: 0 0 2rem;
+	}
 }
 
 .platform__description {
@@ -166,12 +236,27 @@ header {
 	grid-template-columns: auto auto;
 	grid-gap: 2rem;
 	margin: 0 7rem;
+
+	@include tablet {
+		grid-template-columns: auto;
+		margin: 0 1rem 2rem;
+		max-width: 35rem;
+	}
+
+	@include mobile {
+		grid-template-columns: auto;
+		margin: 0 1rem 2rem;
+	}
 }
 
 .card {
 	background-color: $primary;
-	padding: 40px;
+	padding: 2.5rem;
 	min-height: 33rem;
+
+	@include mobile {
+		padding: 1.5rem;
+	}
 
 	p {
 		color: $white;
@@ -202,27 +287,52 @@ header {
 	position: relative;
 	height: 50.875rem;
 	overflow: hidden;
-    background-image: 
-        url('../assets/svg/vector-element-1.svg'),
-        url('../assets/svg/vector-element-2.svg');
-    background-size: 8.75rem, 16.75rem;
-    background-position: 22.25rem -3rem, 32.4375rem 38.375rem;
-    background-repeat: no-repeat, no-repeat;
+	background-image: url('../assets/svg/vector-element-1.svg'), url('../assets/svg/vector-element-2.svg');
+	background-size: 8.75rem, 16.75rem;
+	background-position: 22.25rem -3rem, 32.4375rem 38.375rem;
+	background-repeat: no-repeat, no-repeat;
 	background-color: $secondary;
 	display: flex;
 	align-items: center;
+
+	@include tablet {
+		margin: 1rem;
+		height: auto;
+	}
+
+	@include mobile {
+		margin: 0;
+	}
 }
 
 .about-us__background {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include tablet {
+		flex-direction: column-reverse;
+	}
+
+	@include mobile {
+		flex-direction: column-reverse;
+	}
 }
 
 .about-us__text-content {
 	max-width: 34.25rem;
 	padding-left: 6rem;
+
+	@include tablet {
+		padding: 0 1rem;
+		margin-bottom: 5rem;
+	}
+
+	@include mobile {
+		padding: 0 1rem;
+		margin-bottom: 5rem;
+	}
 }
 
 .about-us__description {
@@ -230,124 +340,209 @@ header {
 	margin-bottom: 1.5rem;
 }
 
-.about-us__image{
-    padding-right: 6rem;
+.about-us__image {
+	padding-right: 6rem;
+
+	@include tablet {
+		padding: 2rem 1rem;
+	}
+
+	@include mobile {
+		padding: 2rem 1rem;
+	}
 }
 
 /* Press section */
 
 .press {
-    margin-left: 7rem;
-    margin-right: 7rem;
+	margin-left: 7rem;
+	margin-right: 7rem;
+
+	@include tablet {
+		margin: 3rem 1rem 1rem;
+	}
+
+	@include mobile {
+		margin: 3rem 1rem 1rem;
+	}
 }
 
 .press__header {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .press__cards {
-    display: grid;
+	display: grid;
 	grid-template-columns: auto auto auto;
 	grid-gap: 2rem;
 
-    .card {
-        background-color: $secondary;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 27.5rem;
+	@include tablet {
+		grid-template-columns: auto;
+	}
 
-        p{
-            color: $black;
-            font-size: 1.375rem;
-        }
-        
-        .card__date {
-            font-size: 14px;
-            color: $dark-grey;
-            margin-top: 13px;
-        }
+	@include mobile {
+		grid-template-columns: auto;
+	}
 
-    }
+	.card {
+		background-color: $secondary;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 27.5rem;
+
+		@include tablet {
+			min-height: auto;
+		}
+
+		p {
+			color: $black;
+			font-size: 1.375rem;
+		}
+
+		.card__date {
+			font-size: 0.875rem;
+			color: $dark-grey;
+			margin-top: 0.8125rem;
+		}
+	}
 }
 
 /* Footer */
 
 footer {
-    background-color: $black;
-    margin-top: 7rem;
-    padding: 6.25rem 7rem 4rem;
-    height: 27.625rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: $grey;
-    font-size: 0.875rem;
-    font-weight: 400;
-    position: relative;
-    z-index: 10;
+	background-color: $black;
+	margin-top: 7rem;
+	padding: 6.25rem 7rem 4rem;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: $grey;
+	font-size: 0.875rem;
+	font-weight: 400;
+	position: relative;
+	z-index: 10;
+
+	@include tablet {
+		padding: 2rem;
+	}
 }
 
 .footer__sections {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-	grid-gap: 2rem;
-    
+	display: flex;
+
+	@include tablet {
+		flex-direction: column;
+	}
+
+	.footer__logo {
+		width: 25%;
+		display: flex;
+
+		@include tablet {
+			width: 100%;
+			padding: 1.5rem 0;
+		}
+
+		@include mobile {
+			width: 100%;
+			padding: 1.5rem 0;
+		}
+	}
+
+	.footer__list {
+		width: 75%;
+		display: flex;
+		flex-direction: row;
+
+		ul {
+			width: 33.3%;
+		}
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include mobile {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
 }
 
 .footer__list-title {
-    color: $dark-grey;
+	color: $dark-grey;
 }
 
 .footer__list-item {
-    margin: 1rem 0;
-    a {
-        font-size: 0.875rem;
-        
-        &:hover {
-            //color: $dark-grey;
-            background-color: transparent;
-            font-weight: 700;
-        }
-    }
+	margin: 1rem 0;
+	a {
+		font-size: 0.875rem;
+
+		&:hover {
+			background-color: transparent;
+			font-weight: 700;
+		}
+	}
 }
 
 .footer__legal {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem 0;
 
-    margin: 2rem 0;
+	@include mobile {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 
-    p, span {
-        font-size: 0.875rem;
-    }
-
+	p,
+	span {
+		font-size: 0.875rem;
+	}
 }
 
 .footer__copyright {
-    color: #A9B2B5;
-    opacity: 0.5;
+	color: #a9b2b5;
+	opacity: 0.5;
+
+	@include mobile {
+		padding: 1rem 0;
+	}
 }
 
 .footer__conditions {
-    width: 32.75rem;
-    text-align: right;
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: flex-end;
-    
-    span {
-        margin-left: 0.3125rem;
-        font-size: 0.8125rem;
-    }
-    a {
-        font-size: 0.8125rem;
+	width: 32.75rem;
+	text-align: right;
+	color: rgba(255, 255, 255, 0.7);
+	display: flex;
+	justify-content: flex-end;
 
-        &:hover {
-            color: $dark-grey;
-            background-color: transparent;
-            font-weight: 500;
-        }
-    }
+	@include mobile {
+		flex-direction: column-reverse;
+		width: 100%;
+		text-align: left;
+	}
+
+	span {
+		margin-left: 0.8rem;
+		font-size: 0.8125rem;
+
+		@include mobile {
+			margin-left: 0;
+		}
+	}
+
+	a {
+		font-size: 0.8125rem;
+
+		&:hover {
+			color: $dark-grey;
+			background-color: transparent;
+			font-weight: 500;
+		}
+	}
 }

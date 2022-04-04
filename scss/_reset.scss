@@ -9,6 +9,7 @@
 }
 
 /* images */
+
 img, picture, video, iframe, figure {
     max-width: 100%;
     width: 100%;
@@ -18,26 +19,31 @@ img, picture, video, iframe, figure {
 }
 
 /* links as box */
+
 a {
     display: block;
 }
  
 /* links in paragraph */
+
 p a {
     display: inline;
 }
 
 /* No decoration in list */
+
 li {
     list-style-type: none;
 }
 
 /* Smooth links */
+
 html {
     scroll-behavior: smooth;
 }
 
 /* Disable main text tags */
+
 h1, h2, h3, h4, h5, h6, p, span, strong, blockquote, i, b, u, em {
     font-size: 1.125rem;
     font-weight: inherit;
@@ -54,18 +60,21 @@ a {
 }
 
 /* Avoid quotes pseudo elements problems */
+
 blockquote:before, blockquote:after, q:before, q:after {
     content: '';
     content: none;
 }
 
 /* Text select */
+
 ::selection {
     background-color: $primary;
     color: $secondary;
 }
 
 /* Form typography */
+
 form, input, textarea, select, button, label {
     font-family: inherit;
     font-size: inherit;
@@ -76,12 +85,14 @@ form, input, textarea, select, button, label {
 }
 
 /* Tables */
+
 table, td, tr {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
 /* Avoid SVG problems */
+
 svg {
     width: 100%;
     display: block;
@@ -89,13 +100,12 @@ svg {
 }
 
 /* Text entrire web */
+
 body {
-    /*min-height: 100vh; */
     font-size: 100%;
     font-family: 'Space Grotesk', sans-serif;
     color: $primary;
     background-color: $white;
-    // line-height: 1.4em;
     font-smooth: always;
     -webkit-font-smoothing: antialiased ;
     -moz-osx-font-smoothing: antialiased ;
